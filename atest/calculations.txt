@@ -1,0 +1,30 @@
+*** Settings ***
+Test Template     Calculate
+Resource          calculator_resource.txt
+
+*** Test Cases ***    Expression        Expected
+Add                   10 + 2            12
+                      1 + 2 + 33        36
+                      1 + -2            -1
+
+Subtract              1 - 2             -1
+                      1 - 2 - 33        -34
+                      1 - -2            3
+
+Multiply              1 * 2             2
+                      1 * 2 * 33        66
+                      1 * -2            -2
+
+Divide                10 / 2            5
+                      1 / 2             0
+                      4 / -2            -2
+
+Associations          2 + 3 * 3         11
+                      (2 + 3) * 3       15
+                      -3 * 5 / 2 + 2    -6
+
+Invalid               [Template]        Invalid expression
+                      1 +
+                      (1 +
+                      * 7
+                      1 / 0             Division by zero

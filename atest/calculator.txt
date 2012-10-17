@@ -1,0 +1,25 @@
+*** Settings ***
+Resource          calculator_resource.txt
+
+*** Test Cases ***
+Input number
+    Push Button    1
+    Result Should Be    1
+
+Input numbers
+    Push Button    1
+    Push Button    2
+    Result Should Be    12
+
+Simple calculation
+    Push Button    1
+    Push Button    +
+    Push Button    2
+    Push Button    3
+    Push Button    =
+    Result Should Be    24
+
+Clear
+    Push Button    2
+    Push Button    C
+    Result Should Be    ${EMPTY}
