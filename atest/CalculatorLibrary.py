@@ -11,7 +11,8 @@ class CalculatorLibrary(object):
         self.result = self.calc.push(button)
 
     def result_should_be(self, expected):
-        self._should_be_equal(self.result, expected)
+        if self.result != expected:
+            raise AssertionError('%s != %s' % (self.result, expected))
 
     def input(self, expression):
         for button in expression.replace(' ', ''):
@@ -25,7 +26,3 @@ class CalculatorLibrary(object):
             return str(err)
         else:
             raise AssertionError('%s should have failed' % expression)
-
-    def _should_be_equal(self, first, second):
-        if first != second:
-            raise AssertionError('%s != %s' % (first, second))
