@@ -1,6 +1,6 @@
 *** Settings ***
-Test Template     Calculate
-Resource          calculator_resource.txt
+Library            CalculatorLibrary
+Test Template      Calculate
 
 *** Test Cases ***    Expression        Expected
 Add                   10 + 2            12
@@ -28,3 +28,14 @@ Invalid               [Template]        Invalid expression
                       (1 +
                       * 7
                       1 / 0             Division by zero
+
+*** Keywords ***
+Calculate
+    [Arguments]    ${expression}    ${expected}
+    Input    C${expression}=
+    Result Should Be    ${expected}
+
+Invalid expression
+    [Arguments]    ${expression}    ${expected}=Invalid expression
+    ${error} =    Should fail    C${expression}=
+    Should Be Equal    ${error}    ${expected}

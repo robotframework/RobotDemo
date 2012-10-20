@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          calculator_resource.txt
+Library            CalculatorLibrary
 
 *** Test Cases ***
 Input number
