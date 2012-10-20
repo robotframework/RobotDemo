@@ -1,0 +1,16 @@
+*** Settings ***
+Library     CalculatorLibrary
+
+*** Test Cases ***
+Addition
+    Given calculator has been cleared
+    When user types 1+1=+1+1=
+    Then result is 4
+
+*** Keywords ***
+Calculator has been cleared
+    Push button     C
+User types ${input}
+    Input    ${input}
+Result is ${result}
+    Result should be    ${result}
