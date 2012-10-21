@@ -1,38 +1,28 @@
 class Calculator(object):
 
+    BUTTONS = '1234567890+-*/()C='
+
     def __init__(self):
         self._expression = ''
-        self._callbacks = self._get_callbacks()
 
-    def _get_callbacks(self):
-        callbacks = dict((b, self._push_button) for b in '0123456789+-*/()')
-        callbacks['c'] = callbacks['C'] = self._clear
-        callbacks['='] = self._evaluate
-        return callbacks
-
-    def push(self, button):
+    def _calc(self):
         try:
-            callback = self._callbacks[button]
-        except KeyError:
-            raise CalculationError('Invalid button')
-        self._expression = callback(self._expression, button)
-        return self._expression
-
-    def _push_button(self, expression, button):
-        return expression + button
-
-    def _clear(self, expression, button):
-        return ''
-
-    def _evaluate(self, expression, button):
-        if not expression:
-            return ''
-        try:
-            return str(eval(expression))
+            return str(eval(self._expression))
         except SyntaxError:
             raise CalculationError('Invalid expression')
         except ZeroDivisionError:
             raise CalculationError('Division by zero')
+
+    def push(self, button):
+        if button not in self.BUTTONS:
+            raise CalculationError('Invalid button "%s"' % button)
+        if button == '=':
+            self._expression = self._calc()
+        elif button == 'C':
+            self._expression = ''
+        else:
+            self._expression += button
+        return self._expression
 
 
 class CalculationError(Exception):

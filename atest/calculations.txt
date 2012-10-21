@@ -1,41 +1,35 @@
 *** Settings ***
-Library            CalculatorLibrary
-Test Template      Calculate
+Library     CalculatorLibrary
+Test template       Calculate
 
-*** Test Cases ***    Expression        Expected
-Add                   10 + 2            12
-                      1 + 2 + 33        36
-                      1 + -2            -1
-
-Subtract              1 - 2             -1
-                      1 - 2 - 33        -34
-                      1 - -2            3
-
-Multiply              1 * 2             2
-                      1 * 2 * 33        66
-                      1 * -2            -2
-
-Divide                10 / 2            5
-                      1 / 2             0
-                      4 / -2            -2
-
-Associations          2 + 3 * 3         11
-                      (2 + 3) * 3       15
-                      -3 * 5 / 2 + 2    -6
-
-Invalid               [Template]        Invalid expression
-                      1 +
-                      (1 +
-                      * 7
-                      1 / 0             Division by zero
+*** Test Cases ***
+Additions
+                12 + 2 + 2       16
+                2 + -3           -1
+Substractions
+                12 - 2 - 2       8
+                2 - -3           5
+Multiplication
+                12 * 2 * 2      48
+                2 * -3           -6
+Division
+                12 / 2 / 2      3
+                2 / -3          -1
+Association rules
+                1 + 1 * 2       3
+                (1 + 1) * 2     4
+Invalid expressions
+                [Template]      Invalid calculation
+                1 +             Invalid expression
+                (1+1            Invalid expression
+                1/0             Division by zero
 
 *** Keywords ***
 Calculate
-    [Arguments]    ${expression}    ${expected}
-    Input    C${expression}=
-    Result Should Be    ${expected}
-
-Invalid expression
-    [Arguments]    ${expression}    ${expected}=Invalid expression
-    ${error} =    Should fail    C${expression}=
-    Should Be Equal    ${error}    ${expected}
+    [arguments]     ${expression}   ${expected}
+    Input           C${expression}=
+    Result should be       ${expected}
+Invalid calculation
+    [arguments]     ${expression}    ${expected}
+    ${error}=     Should fail           C${expression}=
+    Should be equal     ${error}        ${expected}

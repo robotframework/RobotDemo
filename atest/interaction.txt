@@ -1,26 +1,23 @@
 *** Settings ***
-Library            CalculatorLibrary
+Library     CalculatorLibrary
 
 *** Test Cases ***
-Input number
-    Push Button    1
-    Result Should Be    1
-
-Input numbers
-    Push Button    1
-    Push Button    2
-    Result Should Be    12
-
+Push button
+    Push button         1
+    Result should be    1
+Push buttons
+    Push button         1
+    Push button         2
+    Result should be    12
 Simple calculation
-    Push Button    1
-    Push Button    +
-    Push Button    2
-    Push Button    3
-    Push Button    =
-    Result Should Be    24
-
+    Push button         1
+    Push button         +
+    Push button         1
+    Push button         1
+    Push button         =
+    Result should be    12
 Clear
-    Push Button    2
-    Push Button    C
-    Result Should Be    ${EMPTY}
+    Push button         1
+    Push button         C
+    Result should be    ${EMPTY}
 
