@@ -4,13 +4,16 @@ Library     CalculatorLibrary
 *** Test Cases ***
 Addition
     Given calculator has been cleared
-    When user types 1+1=+1+1=
-    Then result is 4
+    When user types "1 + 1"
+    and user pushes equals
+    Then result is "2"
 
 *** Keywords ***
 Calculator has been cleared
     Push button     C
-User types ${input}
+User types "${input}"
     Input    ${input}
-Result is ${result}
+User pushes equals
+    Push button    =
+Result is "${result}"
     Result should be    ${result}
