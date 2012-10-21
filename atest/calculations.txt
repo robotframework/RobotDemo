@@ -1,35 +1,32 @@
 *** Settings ***
 Library     CalculatorLibrary
-Test template       Calculate
+Test template   Calculate
 
 *** Test Cases ***
-Additions
-                12 + 2 + 2       16
-                2 + -3           -1
-Substractions
-                12 - 2 - 2       8
-                2 - -3           5
+Addition
+                    12 + 2 + 2          16
+                    2 + -3              -1
+Substraction
+                    12 - 2 - 2          8
+                    2 - -3              5
 Multiplication
-                12 * 2 * 2      48
-                2 * -3           -6
+                    12 * 2 * 2         48
+                    2 * -3              -6
 Division
-                12 / 2 / 2      3
-                2 / -3          -1
-Association rules
-                1 + 1 * 2       3
-                (1 + 1) * 2     4
+                    12 / 2 / 2          3
+                    2 / -3              -1
 Invalid expressions
-                [Template]      Invalid calculation
-                1 +             Invalid expression
-                (1+1            Invalid expression
-                1/0             Division by zero
+                    [template]          Invalid calculation
+                    1+                  Invalid expression
+                    kekkonen            Invalid button "k"
+                    1/0                 Division by zero
 
 *** Keywords ***
 Calculate
-    [arguments]     ${expression}   ${expected}
+    [arguments]     ${expression}       ${expected}
     Input           C${expression}=
-    Result should be       ${expected}
+    Result should be    ${expected}
 Invalid calculation
-    [arguments]     ${expression}    ${expected}
-    ${error}=     Should fail           C${expression}=
+    [arguments]     ${expression}       ${expected}
+    ${error}=       Calculation should fail     C${expression}=
     Should be equal     ${error}        ${expected}

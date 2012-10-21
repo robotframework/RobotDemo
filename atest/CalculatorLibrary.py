@@ -9,18 +9,18 @@ class CalculatorLibrary(object):
     def push_button(self, button):
         self._result = self._calc.push(button)
 
+    def input(self, expression):
+        for button in expression.replace(' ',''):
+            self.push_button(button)
+
     def result_should_be(self, expected):
         if self._result != expected:
             raise AssertionError('%s != %s' % (self._result, expected))
 
-    def should_fail(self, expression):
+    def calculation_should_fail(self, expression):
         try:
             self.input(expression)
         except CalculationError, err:
             return str(err)
         else:
             raise AssertionError('%s should have failed' % expression)
-
-    def input(self, expression):
-        for button in expression.replace(' ', ''):
-            self.push_button(button)
