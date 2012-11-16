@@ -19,6 +19,6 @@ Longer calculation
     Input               5 + 4 - 3 * 2 / 1 =
     Result should be    3
 Clear
-    Push button         2
+    Push button         1
     Push button         C
-    Result should be     ${EMPTY}
+    Result should be    ${EMPTY}

@@ -20,9 +20,10 @@ class Calculator(object):
         try:
             return str(eval(self._expression))
         except SyntaxError:
-            raise CalculationError("Invalid expression")
+            raise CalculationError('Invalid expression')
         except ZeroDivisionError:
-            raise CalculationError("Division by zero")
+            raise CalculationError('Division by zero')
+
 
 class CalculationError(Exception):
     pass
