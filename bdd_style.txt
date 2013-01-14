@@ -12,8 +12,8 @@ Addition
 Calculator has been cleared
     Push button    C
 
-User types "${input}"
-    Input    ${input}
+User types "${expression}"
+    Push buttons    ${expression}
 
 User pushes equals
     Push button    =

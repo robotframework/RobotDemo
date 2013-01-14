@@ -16,17 +16,17 @@ Division              12 / 2 / 2    3
                       2 / -3        -1
 
 Calculation error     [Template]    Calculation should fail
-                      kekkonen      Invalid button "k".
+                      kekkonen      Invalid button 'k'.
                       ${EMPTY}      Invalid expression.
                       1 / 0         Division by zero.
 
 *** Keywords ***
 Calculate
     [Arguments]    ${expression}    ${expected}
-    Input    C${expression}=
+    Push buttons    C${expression}=
     Result should be    ${expected}
 
 Calculation should fail
     [Arguments]    ${expression}    ${expected}
-    ${error}=    Should fail    C${expression}=
+    ${error} =    Should fail    C${expression}=
     Should be equal    ${expected}    ${error}

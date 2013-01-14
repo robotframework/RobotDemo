@@ -19,7 +19,7 @@ Simple calculation
     Result should be    3
 
 Longer calculation
-    Input    5 + 4 - 3 * 2 / 1 =
+    Push buttons    5 + 4 - 3 * 2 / 1 =
     Result should be    3
 
 Clear
