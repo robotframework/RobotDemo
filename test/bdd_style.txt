@@ -1,5 +1,5 @@
 *** Settings ***
-Library     CalculatorLibrary
+Library           CalculatorLibrary
 
 *** Test Cases ***
 Addition
@@ -10,10 +10,13 @@ Addition
 
 *** Keywords ***
 Calculator has been cleared
-    Push button     C
+    Push button    C
+
 User types "${input}"
     Input    ${input}
+
 User pushes equals
     Push button    =
+
 Result is "${result}"
     Result should be    ${result}
