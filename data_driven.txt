@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Example test cases using the data-driven testing approach.
 ...
-...               Tests use `Calculate` keyword created in this file that in
+...               Tests use `Calculate` keyword created in this file, that in
 ...               turn uses keywords in `CalculatorLibrary`. An exception is
 ...               the last test that has a custom _template keyword_.
 ...
@@ -36,5 +36,5 @@ Calculate
 
 Calculation should fail
     [Arguments]    ${expression}    ${expected}
-    ${error} =    Should fail    C${expression}=
-    Should be equal    ${expected}    ${error}
+    ${error} =    Should cause error    C${expression}=
+    Should be equal    ${expected}    ${error}    # Using `BuiltIn` keyword
