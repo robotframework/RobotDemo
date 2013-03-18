@@ -7,6 +7,8 @@ Documentation     Example test cases using the data-driven testing approach.
 ...
 ...               The data-driven style works well when you need to repeat
 ...               the same workflow multiple times.
+...
+...               One of these tests fails for demonstration purposes.
 Test Template     Calculate
 Library           CalculatorLibrary
 
@@ -22,6 +24,8 @@ Multiplication        12 * 2 * 2    48
 
 Division              12 / 2 / 2    3
                       2 / -3        -1
+
+Failing               1 + 1         3
 
 Calculation error     [Template]    Calculation should fail
                       kekkonen      Invalid button 'k'.
