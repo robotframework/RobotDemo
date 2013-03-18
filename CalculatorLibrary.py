@@ -4,7 +4,7 @@ from calculator import Calculator, CalculationError
 class CalculatorLibrary(object):
     """Test library for testing Calculator business logic.
 
-    Interaction with the calculator is done directly using its `push` method.
+    Interacts with the calculator directly using its `push` method.
     """
 
     def __init__(self):
