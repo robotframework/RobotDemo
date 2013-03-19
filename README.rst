@@ -11,4 +11,4 @@ results, etc. You can also view the tests and generated results through the
 wiki without running the demo yourself.
 
 __ http://robotframework.org
-__ https://bitbucket.org/robotframework/CalculatorDemo/wiki/Home
+__ https://bitbucket.org/robotframework/calculatordemo/wiki/Home
