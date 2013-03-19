@@ -2,9 +2,9 @@
 Documentation     Example test case using the gherkin syntax.
 ...
 ...               This test has a workflow similar to the keyword-driven
-...               examples. Now the used keywords are higher level, created
-...               in this file, and also all arguments are embedded into
-...               keyword names to make the tests read better.
+...               examples. The difference is that the keywords use higher
+...               abstraction level and their arguments are embedded into
+...               the keyword names.
 ...
 ...               This kind of _gherkin_ syntax has been made popular by
 ...               [http://cukes.info|Cucumber]. It works well especially when

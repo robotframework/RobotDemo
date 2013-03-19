@@ -8,7 +8,8 @@ Documentation     Example test cases using the data-driven testing approach.
 ...               The data-driven style works well when you need to repeat
 ...               the same workflow multiple times.
 ...
-...               One of these tests fails for demonstration purposes.
+...               Notice that one of these tests fails on purpose to show how
+...               failures look like.
 Test Template     Calculate
 Library           CalculatorLibrary
 
