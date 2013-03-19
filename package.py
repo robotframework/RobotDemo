@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-from glob import  glob
+from glob import glob
 from os import chdir, sep as SEP
 from os.path import abspath, dirname, join
 from time import localtime
 from zipfile import ZipFile, ZIP_DEFLATED
 
-NAME = 'CalculatorDemo'
+NAME = 'RobotDemo'
 ZIP_NAME = NAME + '-%d%02d%02d.zip' % localtime()[:3]
 FILES = ['README.rst',
          'calculator.py',

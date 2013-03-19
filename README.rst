@@ -1,5 +1,5 @@
-Robot Framework Demo Project
-============================
+Robot Framework Demo
+====================
 
 `Robot Framework`__ is a generic open source test automation framework.
 This demo introduces the basic Robot Framework test data syntax, how tests
@@ -11,4 +11,4 @@ results, etc. You can also view the tests and generated results through
 the wiki without running the demo yourself.
 
 __ http://robotframework.org
-__ https://bitbucket.org/robotframework/calculatordemo/wiki/Home
+__ https://bitbucket.org/robotframework/robotdemo/wiki/Home
