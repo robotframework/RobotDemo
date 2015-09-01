@@ -2,9 +2,9 @@ from calculator import Calculator, CalculationError
 
 
 class CalculatorLibrary(object):
-    """Test library for testing Calculator business logic.
+    """Test library for testing *Calculator* business logic.
 
-    Interacts with the calculator directly using its `push` method.
+    Interacts with the calculator directly using its ``push`` method.
     """
 
     def __init__(self):
@@ -12,7 +12,7 @@ class CalculatorLibrary(object):
         self._result = ''
 
     def push_button(self, button):
-        """Pushes the specified `button`.
+        """Pushes the specified ``button``.
 
         The given value is passed to the calculator directly. Valid buttons
         are everything that the calculator accepts.
@@ -26,7 +26,7 @@ class CalculatorLibrary(object):
         self._result = self._calc.push(button)
 
     def push_buttons(self, buttons):
-        """Pushes the specified `buttons`.
+        """Pushes the specified ``buttons``.
 
         Uses `Push Button` to push all the buttons that must be given as
         a single string. Possible spaces are ignored.
@@ -38,7 +38,7 @@ class CalculatorLibrary(object):
             self.push_button(button)
 
     def result_should_be(self, expected):
-        """Verifies that the current result is `expected`.
+        """Verifies that the current result is ``expected``.
 
         Example:
         | Push Buttons     | 1 + 2 = |
@@ -48,7 +48,7 @@ class CalculatorLibrary(object):
             raise AssertionError('%s != %s' % (self._result, expected))
 
     def should_cause_error(self, expression):
-        """Verifies that calculating the given `expression` causes an error.
+        """Verifies that calculating the given ``expression`` causes an error.
 
         The error message is returned and can be verified using, for example,
         `Should Be Equal` or other keywords in `BuiltIn` library.
@@ -63,4 +63,5 @@ class CalculatorLibrary(object):
         except CalculationError, err:
             return str(err)
         else:
-            raise AssertionError("'%s' should caused an error" % expression)
+            raise AssertionError("'%s' should have caused an error."
+                                 % expression)
