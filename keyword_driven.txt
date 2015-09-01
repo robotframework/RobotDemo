@@ -2,13 +2,13 @@
 Documentation     Example test cases using the keyword-driven testing approach.
 ...
 ...               All tests contain a workflow constructed from keywords in
-...               `CalculatorLibrary`. Creating new tests or editing existing
+...               `CalculatorLibrary.py`. Creating new tests or editing existing
 ...               is easy even for people without programming skills.
 ...
 ...               This kind of style works well for normal test automation.
 ...               If also business people need to understand tests, using
 ...               _gherkin_ style may work better.
-Library           CalculatorLibrary
+Library           CalculatorLibrary.py
 
 *** Test Cases ***
 Push button

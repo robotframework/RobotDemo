@@ -10,7 +10,7 @@ Documentation     Example test case using the gherkin syntax.
 ...               [http://cukes.info|Cucumber]. It works well especially when
 ...               tests act as examples that need to be easily understood also
 ...               by the business people.
-Library           CalculatorLibrary
+Library           CalculatorLibrary.py
 
 *** Test Cases ***
 Addition
