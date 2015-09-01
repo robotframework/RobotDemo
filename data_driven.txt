@@ -2,7 +2,7 @@
 Documentation     Example test cases using the data-driven testing approach.
 ...
 ...               Tests use `Calculate` keyword created in this file, that in
-...               turn uses keywords in `CalculatorLibrary`. An exception is
+...               turn uses keywords in `CalculatorLibrary.py`. An exception is
 ...               the last test that has a custom _template keyword_.
 ...
 ...               The data-driven style works well when you need to repeat
@@ -11,7 +11,7 @@ Documentation     Example test cases using the data-driven testing approach.
 ...               Notice that one of these tests fails on purpose to show how
 ...               failures look like.
 Test Template     Calculate
-Library           CalculatorLibrary
+Library           CalculatorLibrary.py
 
 *** Test Cases ***    Expression    Expected
 Addition              12 + 2 + 2    16
