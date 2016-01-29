@@ -131,7 +131,7 @@ Test cases are executed with the ``robot`` command::
     robot keyword_driven.robot
 
 .. note:: If you are using Robot Framework 2.9 or earlier, you need to
-          use Python interpreter specific command ``pybot``, ``jybot``or
+          use Python interpreter specific command ``pybot``, ``jybot`` or
           ``ipybot`` instead.
 
 To execute all test case files in a directory recursively, just give the
