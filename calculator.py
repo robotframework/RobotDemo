@@ -11,6 +11,8 @@ class Calculator(object):
             self._expression = self._calculate(self._expression)
         elif button == 'C':
             self._expression = ''
+        elif button == '/':
+            self._expression += '//'    # Integer division also in Python 3
         else:
             self._expression += button
         return self._expression
