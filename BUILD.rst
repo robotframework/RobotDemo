@@ -16,11 +16,5 @@ Instructions to create releases
      python -m robot.libdoc CalculatorLibrary.py CalculatorLibrary.html
 
 4. Move regenerated log, report and library doc to
-   https://bitbucket.org/robotframework/robotframework.bitbucket.org/src/master/RobotDemo/
+   https://github.com/robotframework/RobotDemo/docs
    to make them visible online.
-
-5. Generate a new download package::
-
-     ./package.py
-
-6. Upload the download package to https://bitbucket.org/robotframework/robotdemo/downloads
