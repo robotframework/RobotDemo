@@ -37,6 +37,9 @@ the command line like::
 Run ``invoke`` without arguments for help. All tasks can be listed using
 ``invoke --list`` and each task's usage with ``invoke --help task``.
 
+Creating release
+----------------
+
 1. Test that everything works with Python 2 and Python 3. Exactly one test
    ought to fail::
 
@@ -51,9 +54,9 @@ Run ``invoke`` without arguments for help. All tasks can be listed using
 
      inv kw-docs
 
-4. Move regenerated log, report and library doc to
-   https://github.com/robotframework/RobotDemo/docs
-   to make them visible online.
+4. Move regenerated log, report and library doc to docs::
+
+     inv move-docs
 
 5. If README.rst has changed, generate project documentation based on it::
 

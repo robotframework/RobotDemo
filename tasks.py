@@ -1,4 +1,5 @@
 from pathlib import Path
+import shutil
 
 from docutils.core import publish_cmdline
 from invoke import task
@@ -23,7 +24,7 @@ def kw_docs(ctx):
 def project_docs(ctx):
     """Generate project documentation.
 
-     These docs are visible at http://robotframework.org/SeleniumLibrary/.
+     These docs are visible at http://robotframework.org/RobotDemo/.
      """
     args = ['--stylesheet=style.css,extra.css',
             '--link-stylesheet',
@@ -31,3 +32,18 @@ def project_docs(ctx):
             'docs/index.html']
     publish_cmdline(writer_name='html5', argv=args)
     print(Path(args[-1]).absolute())
+
+
+@task
+def move_docs(ctx):
+    """Move report.html and log.html to docs
+
+    These docs are visible http://robotframework.org/RobotDemo/.
+    """
+    log = Path('./log.html')
+    report = Path('./report.html')
+    dest = Path('.') / 'docs'
+    print(log.absolute())
+    shutil.copy(log.absolute(), str(dest))
+    print(report.absolute())
+    shutil.copy(report.absolute(), str(dest))
