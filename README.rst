@@ -14,10 +14,9 @@ look like, and how to extend the framework with custom test libraries.
 Downloading demo package
 ========================
 
-To get the demo, you can either download and extract the latest
-``RobotDemo-<date>.zip`` package from the `download page`_ or checkout the
-`source code`_ directly. As a result you get ``RobotDemo`` directory with
-several files.
+To get the demo, you can either `download`_ and extract the latest
+package from the GitHub or checkout the `source code`_ directly.
+As a result you get ``RobotDemo`` directory with several files.
 
 Example `test cases`_, `test library`_ used by them, and `generated results`_
 are available also online. Therefore, you do not need to download the demo if
@@ -148,21 +147,21 @@ __ `Generated results`_
 
 
 .. _Robot Framework: http://robotframework.org
+.. _download: https://github.com/robotframework/RobotDemo/archive/master.zip
+.. _source code: https://github.com/robotframework/RobotDemo.git
+.. _calculator.py: https://github.com/robotframework/RobotDemo/blob/master/calculator.py
+.. _keyword_driven.robot: https://github.com/robotframework/RobotDemo/blob/master/keyword_driven.robot
+.. _CalculatorLibrary.py: https://github.com/robotframework/RobotDemo/blob/master/CalculatorLibrary.py
+.. _data_driven.robot: https://github.com/robotframework/RobotDemo/blob/master/data_driven.robot
+.. _gherkin.robot: https://github.com/robotframework/RobotDemo/blob/master/gherkin.robot
+.. _Cucumber: https://cucumber.io/
+.. _Robot Framework User Guide: http://robotframework.org/robotframework/#user-guide
 .. _Python: http://python.org
 .. _Jython: http://jython.org
 .. _IronPython: http://ironpython.net
 .. _pip: http://pip-installer.org
 .. _installation instructions: https://github.com/robotframework/robotframework/blob/master/INSTALL.rst
-.. _Robot Framework User Guide: http://robotframework.org/robotframework/#user-guide
-.. _download page: https://bitbucket.org/robotframework/robotdemo/downloads
-.. _source code: https://bitbucket.org/robotframework/robotdemo/src
-.. _calculator.py: https://bitbucket.org/robotframework/robotdemo/src/master/calculator.py
-.. _CalculatorLibrary.py: https://bitbucket.org/robotframework/robotdemo/src/master/CalculatorLibrary.py
-.. _keyword_driven.robot: https://bitbucket.org/robotframework/robotdemo/src/master/keyword_driven.robot
-.. _data_driven.robot: https://bitbucket.org/robotframework/robotdemo/src/master/data_driven.robot
-.. _gherkin.robot: https://bitbucket.org/robotframework/robotdemo/src/master/gherkin.robot
-.. _Cucumber: http://cukes.info
 .. _Libdoc: http://robotframework.org/robotframework/#built-in-tools
-.. _CalculatorLibrary.html: http://robotframework.bitbucket.org/RobotDemo/CalculatorLibrary.html
-.. _report.html: http://robotframework.bitbucket.org/RobotDemo/report.html
-.. _log.html: http://robotframework.bitbucket.org/RobotDemo/log.html
+.. _CalculatorLibrary.html: http://robotframework.org/RobotDemo/CalculatorLibrary.html
+.. _report.html: http://robotframework.org/RobotDemo/report.html
+.. _log.html: http://robotframework.org/RobotDemo/log.html
