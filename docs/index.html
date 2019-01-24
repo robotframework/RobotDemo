@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>Robot Framework Demo</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="extra.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="robot-framework-demo">
+<h1 class="title">Robot Framework Demo</h1>
+
+<p><a class="reference external" href="http://robotframework.org">Robot Framework</a> is a generic open source test automation framework.
+In addition to introducing Robot Framework test data syntax, this demo
+shows how to execute test cases, how generated reports and logs
+look like, and how to extend the framework with custom test libraries.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first"><strong>Contents:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#downloading-demo-package" id="id3">Downloading demo package</a></p></li>
+<li><p><a class="reference internal" href="#demo-application" id="id4">Demo application</a></p></li>
+<li><p><a class="reference internal" href="#test-cases" id="id5">Test cases</a></p></li>
+<li><p><a class="reference internal" href="#test-library" id="id6">Test library</a></p></li>
+<li><p><a class="reference internal" href="#generated-results" id="id7">Generated results</a></p></li>
+<li><p><a class="reference internal" href="#running-demo" id="id8">Running demo</a></p></li>
+</ul>
+</div>
+<div class="section" id="downloading-demo-package">
+<h1><a class="toc-backref" href="#id3">Downloading demo package</a></h1>
+<p>To get the demo, you can either <a class="reference external" href="https://github.com/robotframework/RobotDemo/archive/master.zip">download</a> and extract the latest
+package from the GitHub or checkout the <a class="reference external" href="https://github.com/robotframework/RobotDemo.git">source code</a> directly.
+As a result you get <span class="docutils literal">RobotDemo</span> directory with several files.</p>
+<p>Example <a class="reference internal" href="#test-cases">test cases</a>, <a class="reference internal" href="#test-library">test library</a> used by them, and <a class="reference internal" href="#generated-results">generated results</a>
+are available also online. Therefore, you do not need to download the demo if
+you are not interested in <a class="reference internal" href="#running-demo">running it</a> yourself.</p>
+</div>
+<div class="section" id="demo-application">
+<h1><a class="toc-backref" href="#id4">Demo application</a></h1>
+<p>The demo application is a very simple calculator implemented with Python
+(<a class="reference external" href="https://github.com/robotframework/RobotDemo/blob/master/calculator.py">calculator.py</a>). It contains only business logic and no user interface.
+You cannot really run the calculator manually.</p>
+</div>
+<div class="section" id="test-cases">
+<h1><a class="toc-backref" href="#id5">Test cases</a></h1>
+<p>The demo contains three different test case files illustrating three different
+approaches for creating test cases with Robot Framework. Click file names below
+to see the latest versions online.</p>
+<dl>
+<dt><a class="reference external" href="https://github.com/robotframework/RobotDemo/blob/master/keyword_driven.robot">keyword_driven.robot</a></dt>
+<dd><p>Example test cases using the <em>keyword-driven</em> testing approach.</p>
+<p>All tests contain a workflow constructed from keywords in
+<a class="reference external" href="https://github.com/robotframework/RobotDemo/blob/master/CalculatorLibrary.py">CalculatorLibrary.py</a>. Creating new tests or editing
+existing is easy even for people without programming skills.</p>
+<p>The <em>keyword-driven</em> approach works well for normal test
+automation, but the <em>gherkin</em> style might be even better
+if also business people need to understand tests. If the
+same workflow needs to repeated multiple times, it is best
+to use to the <em>data-driven</em> approach.</p>
+</dd>
+<dt><a class="reference external" href="https://github.com/robotframework/RobotDemo/blob/master/data_driven.robot">data_driven.robot</a></dt>
+<dd><p>Example test cases using the <em>data-driven</em> testing approach.</p>
+<p>The <em>data-driven</em> style works well when you need to repeat
+the same workflow multiple times.</p>
+<p>Tests use <span class="docutils literal">Calculate</span> keyword created in this file, that in
+turn uses keywords in <a class="reference external" href="https://github.com/robotframework/RobotDemo/blob/master/CalculatorLibrary.py">CalculatorLibrary.py</a>. An exception
+is the last test that has a custom <em>template keyword</em>.</p>
+</dd>
+<dt><a class="reference external" href="https://github.com/robotframework/RobotDemo/blob/master/gherkin.robot">gherkin.robot</a></dt>
+<dd><p>Example test case using the <em>gherkin</em> syntax.</p>
+<p>This test has a workflow similar to the <em>keyword-driven</em>
+examples. The difference is that the keywords use higher
+abstraction level and their arguments are embedded into
+the keyword names.</p>
+<p>This kind of <em>gherkin</em> syntax has been made popular by <a class="reference external" href="https://cucumber.io/">Cucumber</a>.
+It works well especially when tests act as examples that need to
+be easily understood also by the business people.</p>
+</dd>
+</dl>
+<p>As you can see, creating test cases with Robot Framework is very easy.
+See <a class="reference external" href="http://robotframework.org/robotframework/#user-guide">Robot Framework User Guide</a> for details about the test data syntax.</p>
+</div>
+<div class="section" id="test-library">
+<h1><a class="toc-backref" href="#id6">Test library</a></h1>
+<p>All test cases interact with the calculator using a custom test library named
+<a class="reference external" href="https://github.com/robotframework/RobotDemo/blob/master/CalculatorLibrary.py">CalculatorLibrary.py</a>. In practice the library is just a Python class
+with methods that create the keywords used by the test cases.</p>
+<p>Generated library documentation makes it easy to see what keywords the
+library provides. This documentation is created with <a class="reference external" href="http://robotframework.org/robotframework/#built-in-tools">Libdoc</a> tool integrated
+with the framework:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://robotframework.org/RobotDemo/CalculatorLibrary.html">CalculatorLibrary.html</a></p></li>
+</ul>
+<p>As you can see, Robot Framework's test library API is very simple.
+See <a class="reference external" href="http://robotframework.org/robotframework/#user-guide">Robot Framework User Guide</a> for more information about creating test
+libraries, using Libdoc, and so on.</p>
+</div>
+<div class="section" id="generated-results">
+<h1><a class="toc-backref" href="#id7">Generated results</a></h1>
+<p>After <a class="reference internal" href="#running-tests">running tests</a>, you will get report and log in HTML format. Example
+files are also visible online in case you are not interested in running
+the demo yourself. Notice that one of the test has failed on purpose to
+show how failures look like.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://robotframework.org/RobotDemo/report.html">report.html</a></p></li>
+<li><p><a class="reference external" href="http://robotframework.org/RobotDemo/log.html">log.html</a></p></li>
+</ul>
+</div>
+<div class="section" id="running-demo">
+<h1><a class="toc-backref" href="#id8">Running demo</a></h1>
+<div class="section" id="preconditions">
+<h2>Preconditions</h2>
+<p>A precondition for running the tests is having <a class="reference external" href="http://robotframework.org">Robot Framework</a> installed.
+It is most commonly used on <a class="reference external" href="http://python.org">Python</a> but it works also with <a class="reference external" href="http://jython.org">Jython</a> (JVM)
+and <a class="reference external" href="http://ironpython.net">IronPython</a> (.NET). Robot Framework <a class="reference external" href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst">installation instructions</a>
+cover installation procedure in detail. People already familiar with
+installing Python packages and having <a class="reference external" href="http://pip-installer.org">pip</a> package manager installed, can
+simply run the following command:</p>
+<pre class="literal-block">pip install robotframework</pre>
+<p>Robot Framework 3.0 and newer support Python 3 in addition to Python 2. Also
+this demo project is nowadays Python 3 compatible.</p>
+</div>
+<div class="section" id="running-tests">
+<h2>Running tests</h2>
+<p>Test cases are executed with the <span class="docutils literal">robot</span> command:</p>
+<pre class="literal-block">robot keyword_driven.robot</pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Robot Framework 2.9 or earlier, you need to
+use Python interpreter specific command <span class="docutils literal">pybot</span>, <span class="docutils literal">jybot</span> or
+<span class="docutils literal">ipybot</span> instead.</p>
+</div>
+<p>To execute all test case files in a directory recursively, just give the
+directory as an argument. You can also give multiple files or directories in
+one go and use various command line options supported by Robot Framework.
+The results <a class="reference internal" href="#generated-results">available online</a> were created using the following command:</p>
+<pre class="literal-block">robot --name Robot --loglevel DEBUG keyword_driven.robot data_driven.robot gherkin.robot</pre>
+<p>Run <span class="docutils literal">robot <span class="pre">--help</span></span> for more information about the command line usage and see
+<a class="reference external" href="http://robotframework.org/robotframework/#user-guide">Robot Framework User Guide</a> for more details about test execution in general.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
